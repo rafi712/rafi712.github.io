@@ -10,3 +10,13 @@
 section {
     padding-top: 5rem;
 }
+
+footer a {
+    text-decoration: none;
+
+}
+
+footer a:hover {
+    color: greenyellow !important;
+    transform: translateX(5px) !important;
+}
