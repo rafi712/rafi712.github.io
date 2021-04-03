@@ -167,10 +167,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxYwNxgtxIP393jTfS7Iy7EJ5Pr5impe6V9t7Zk1U5nLqGshLAdpZ0RnR7nSfvVnQyO/exec'
-        const form = document.forms['submit-form']
+        const form = document.forms['submit-form'];
+        const name = document.querySelector('#name');
+        const email = document.querySelector('#email');
+        const message = document.querySelector('#message');      
 
         form.addEventListener('submit', e => {
-          e.preventDefault()
+          e.preventDefault();
+          name.value = '';
+          email.value = '';
+          message.value = '';
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => console.log('Success!', response))
             .catch(error => console.error('Error!', error.message))
